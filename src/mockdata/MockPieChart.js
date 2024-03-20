@@ -1,9 +1,7 @@
 import { Box } from "@mui/material";
-import { graphic } from "echarts";
 import ReactEcharts from "echarts-for-react";
 
 export default function MockPieChart() {
-  var colorPalette = ["#172B4D", "#00A9A5", "#4E8098", "#90C2E7"];
   const option = {
     tooltip: {
       trigger: "item",

@@ -1,14 +1,18 @@
 import { Box, TextField, Typography } from "@mui/material";
+import { MuiTelInput } from "mui-tel-input";
+import { useState } from "react";
 
 export let personalInfo = [];
 
 export default function PersonalInfoForm() {
+  const [value1, setValue1] = useState("");
   const nameHandler = (event) => {
     personalInfo[0] = event.target.value;
   };
 
-  const phoneHandler = (event) => {
-    personalInfo[1] = event.target.value;
+  const phoneHandler = (value) => {
+    setValue1(value)
+    personalInfo[1] = value1;
   };
 
   const emailHandler = (event) => {
@@ -26,7 +30,6 @@ export default function PersonalInfoForm() {
   const occupationHandler = (event) => {
     personalInfo[5] = event.target.value;
   };
-  
 
   return (
     <>
@@ -46,13 +49,10 @@ export default function PersonalInfoForm() {
           label="Name"
           variant="standard"
         />
-        <TextField
+        <MuiTelInput
           sx={{ width: "75%", marginTop: "24px" }}
-          fullWidth
-          id="standard-required"
-          label="Phone Number"
-          type="number"
-          value={personalInfo[1]}
+          label={"Phone Number"}
+          value={value1 === "" ? personalInfo[1] : value1}
           onChange={phoneHandler}
           variant="standard"
         />
