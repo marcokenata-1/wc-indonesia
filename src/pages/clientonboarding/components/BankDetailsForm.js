@@ -37,6 +37,7 @@ export default function BankDetailsForm() {
           fullWidth
           id="standard-required"
           label="Bank Account Number"
+          inputMode="numeric"
           type={"number"}
           value={bankDetails[1]}
           onChange={bankAccountHandler}
@@ -47,6 +48,7 @@ export default function BankDetailsForm() {
           fullWidth
           id="standard-required"
           label="Tax ID Number"
+          inputMode="numeric"
           type={"number"}
           value={bankDetails[2]}
           onChange={taxIdHandler}
