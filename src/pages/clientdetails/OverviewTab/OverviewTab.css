@@ -1,0 +1,14 @@
+.circle {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  margin: 18px;
+
+}
+
+.text {
+  margin: auto;
+  color: white;
+}
