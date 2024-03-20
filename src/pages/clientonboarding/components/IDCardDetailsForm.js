@@ -77,6 +77,8 @@ export default function IDCardDetailsForm() {
           fullWidth
           id="standard-required"
           label="ID Card Number"
+          type={"number"}
+          inputMode={"numeric"}
           value={idCardDetails[0]}
           onChange={idCardNumberHandler}
           variant="standard"
