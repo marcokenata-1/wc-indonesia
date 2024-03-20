@@ -1,6 +1,8 @@
 import { Box, TextField, Typography } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
 import { useState } from "react";
+import '../components/form.css';
+
 
 export let personalInfo = [];
 

@@ -1,4 +1,5 @@
 import { Box, Button, styled, TextField, Typography } from "@mui/material";
+import '../components/form.css';
 
 export let idCardDetails = [];
 

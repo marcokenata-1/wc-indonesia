@@ -10,6 +10,8 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import '../components/form.css';
+
 
 export default function RiskProfileForm() {
   const [value, setValue] = useState("yes");
