@@ -1,7 +1,9 @@
 import { Box } from "@mui/material";
+import { graphic } from "echarts";
 import ReactEcharts from "echarts-for-react";
 
 export default function MockPieChart() {
+  var colorPalette = ["#172B4D", "#00A9A5", "#4E8098", "#90C2E7"];
   const option = {
     tooltip: {
       trigger: "item",
@@ -10,7 +12,7 @@ export default function MockPieChart() {
       right: "10%",
       top: "25%",
       orient: "vertical",
-        left: "75%"
+      left: "75%",
     },
     series: [
       {
@@ -27,17 +29,17 @@ export default function MockPieChart() {
             show: false,
             fontSize: 40,
             fontWeight: "bold",
-            formatter: '{d}%'
+            formatter: "{d}%",
           },
         },
         labelLine: {
-          show: true,
+          show: false,
         },
         data: [
-          { value: 36.5, name: "Reksadana Saham" },
-          { value: 26.5, name: "SBN Retail" },
-          { value: 23, name: "Cash" },
-          { value: 23, name: "Lainnya" },
+          { value: 36.5, name: "Reksadana Saham" , itemStyle : { color : "#172B4D"}},
+          { value: 26.5, name: "SBN Retail" , itemStyle : { color : "#00A9A5"}},
+          { value: 23, name: "Cash" , itemStyle : { color : "#4E8098"}},
+          { value: 23, name: "Lainnya" , itemStyle : { color : "#90C2E7"}},
         ],
       },
     ],
@@ -46,10 +48,13 @@ export default function MockPieChart() {
   return (
     <>
       <Box sx={{ height: "225px" }}>
-        <ReactEcharts option={option} style={{ height: "225px", marginLeft:"-50%" }} />
+        <ReactEcharts
+          option={option}
+          style={{ height: "225px", marginLeft: "-50%" }}
+        />
       </Box>
     </>
   );
 }
 
-export let personalData = [] ;
+export let personalData = [];
