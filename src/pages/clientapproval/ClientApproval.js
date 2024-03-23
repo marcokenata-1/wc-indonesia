@@ -67,15 +67,40 @@ export default function ClientApproval() {
             {localClientData.map((data, index) => (
               <TableRow>
                 <TableCell>{data[3][0]}</TableCell>
-                <TableCell>{data[0][0]}</TableCell>
+                <TableCell>
+                  <Typography
+                    sx={{ color: "#00A9A5" }}
+                    onClick={() => {
+                      navigate("/approval-details/" + data[3][0]);
+                    }}
+                  >
+                    {data[0][0]}
+                  </Typography>
+                </TableCell>
                 <TableCell>{data[3][1]}</TableCell>
-                <TableCell sx={{ width: "40%"}}>
+                <TableCell sx={{ width: "40%" }}>
                   {data[4].length === 2 && (
-                    <Box sx={{ display:"flex", justifyContent:"center"}}>
-                      <Button onClick={() => handleDeclined(data)} sx={{ textTransform: "none" , color:"red", marginRight:"32px"}}>
+                    <Box sx={{ display: "flex", justifyContent: "center" }}>
+                      <Button
+                        onClick={() => handleDeclined(data)}
+                        sx={{
+                          textTransform: "none",
+                          color: "red",
+                          marginRight: "32px",
+                        }}
+                      >
                         Deny
                       </Button>{" "}
-                      <Button onClick={() => handleAccept(data)}  sx={{ textTransform: "none" , backgroundColor:"#DBFE87", color:"black"}}>Accept</Button>
+                      <Button
+                        onClick={() => handleAccept(data)}
+                        sx={{
+                          textTransform: "none",
+                          backgroundColor: "#DBFE87",
+                          color: "black",
+                        }}
+                      >
+                        Accept
+                      </Button>
                     </Box>
                   )}
                   {data[4][0] === "accepted" && data[4].length === 1 && (

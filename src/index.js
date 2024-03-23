@@ -8,6 +8,7 @@ import App from "./App";
 import ClientList from "./pages/clientlist/ClientList";
 import ClientOnboarding from "./pages/clientonboarding/ClientOnboarding";
 import ClientApproval from "./pages/clientapproval/ClientApproval";
+import ApprovalDetails from "./pages/approvaldetails/ApprovalDetails";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "client-approval/",
         element: <ClientApproval />,
+      },
+      {
+        path: "approval-details/:id",
+        element: <ApprovalDetails />,
       },
     ],
   },
